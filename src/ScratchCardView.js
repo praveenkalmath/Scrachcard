@@ -24,7 +24,7 @@ export default function ScratchCardView() {
     width: 300,
     height: 300,
     image: couponCover,
-    finishPercent: 50,
+    finishPercent: 20,
     onComplete: handleScratchComplete,
   };
 
@@ -49,7 +49,7 @@ export default function ScratchCardView() {
               {scratchedText}
               {couponNumber && (
                 <div className="mt-2 text-sm text-gray-500">
-                  Coupon Number: {couponNumber}
+                  Coupon Code: {couponNumber}
                 </div>
               )}
             </div>
