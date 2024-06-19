@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ScratchCard from "react-scratchcard-v2";
+import Confetti from "react-confetti";
+import { useWindowSize } from 'react-use';
 import couponCover from "./logo.jpg";
 import "./styles.css";
-import bouquetImage from "./FLowers.gif";
-// import balloonImage from "./flower.png"; // Import the balloon image
 
 export default function ScratchCardView() {
   const [scratchedText, setScratchedText] = useState("");
   const [discountPercentage, setDiscountPercentage] = useState("");
   const [couponNumber, setCouponNumber] = useState("");
   const [isScratched, setIsScratched] = useState(false);
-  const [showBalloons, setShowBalloons] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  
+  const { width, height } = useWindowSize();
 
   const handleScratchComplete = () => {
     console.log("The card is now clear!");
@@ -20,6 +22,8 @@ export default function ScratchCardView() {
     setCouponNumber(uniqueNumber);
     setScratchedText(`Discount ${discount}`);
     setIsScratched(true);
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 7000); 
   };
 
   const settings = {
@@ -30,12 +34,16 @@ export default function ScratchCardView() {
     onComplete: handleScratchComplete,
   };
 
-  const balloons = Array.from({ length: 4 }); // Create an array with 4 balloons
-
   return (
     <div className="Apps">
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-        <div className="bg-white shadow-lg rounded-lg p-6 text-center relative" style={{ width: "300px", height: "300px" }}>
+      {showConfetti && (
+        <Confetti width={width * 1} height={height * 0.8} />
+      )}
+      <div className="flex justify-center items-center h-screen">
+        <div
+          className="bg-white shadow-lg rounded-lg p-6 text-center relative"
+          style={{ width: "300px", height: "300px" }}
+        >
           {!isScratched ? (
             <div className="scratchCardContainers">
               <ScratchCard {...settings}>
@@ -45,17 +53,23 @@ export default function ScratchCardView() {
               </ScratchCard>
             </div>
           ) : (
-            <div className="scratchedDiv text-lg font-bold text-gray-700">
+            <div className="scratchedDiv text-lg font-bold text-gray-700 bg-gray-100 boxStyle">
               <div>
-              <p className="text-3xl font-bold typewriter">Congratulations! You Won!</p>
-                <img src={bouquetImage} alt="Bouquet" style={{ maxWidth: "100%", marginTop: "10px", height: "30vh", display: "block", marginLeft: "auto", marginRight: "auto" }} />
+                <p className="text-3xl font-bold typewriter text-center">
+                  Congratulations! You Won!
+                </p>
               </div>
-              {scratchedText}
-              {couponNumber && (
-                <div className="mt-2 text-sm text-gray-500">
-                  Coupon Code: {couponNumber}
+              <div className="text-center">
+                {scratchedText}
+                {couponNumber && (
+                  <div className="mt-2 text-center text-sm text-black">
+                    Coupon Code: {couponNumber}
+                  </div>
+                )}
+                <div className="mt-2 text-center text-sm text-black">
+                  Thank you!
                 </div>
-              )}
+              </div>
             </div>
           )}
         </div>
