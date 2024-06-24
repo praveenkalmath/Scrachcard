@@ -11,7 +11,6 @@ export default function ScratchCardView() {
   const [couponNumber, setCouponNumber] = useState("");
   const [isScratched, setIsScratched] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  
   const { width, height } = useWindowSize();
 
   const handleScratchComplete = () => {

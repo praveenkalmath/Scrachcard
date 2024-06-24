@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import card from "./logo.jpg";
-
+import Header from "./common/header";
 export default function Home() {
   const navigate = useNavigate();
 
@@ -13,6 +13,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Header/>
     <div className="App flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-6 text-center">
         <h1 className="text-lg font-bold text-gray-700">
@@ -29,5 +31,6 @@ export default function Home() {
       <img src={card} className="cardimg"></img>
       </div>
     </div>
+    </>
   );
 }
