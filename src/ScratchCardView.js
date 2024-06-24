@@ -4,6 +4,8 @@ import Confetti from "react-confetti";
 import { useWindowSize } from 'react-use';
 import couponCover from "./logo.jpg";
 import "./styles.css";
+import Header from "./common/header";
+import Footer from "./common/footer";
 
 export default function ScratchCardView() {
   const [scratchedText, setScratchedText] = useState("");
@@ -33,7 +35,8 @@ export default function ScratchCardView() {
     onComplete: handleScratchComplete,
   };
 
-  return (
+  return (<>
+    <Header/>
     <div className="Apps">
       {showConfetti && (
         <Confetti width={width * 1} height={height * 0.8} />
@@ -74,5 +77,7 @@ export default function ScratchCardView() {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

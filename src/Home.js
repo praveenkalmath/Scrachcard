@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import card from "./logo.jpg";
 import Header from "./common/header";
+import Footer from "./common/footer";
 export default function Home() {
   const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ export default function Home() {
       <img src={card} className="cardimg"></img>
       </div>
     </div>
+    <Footer/>
     </>
   );
 }
