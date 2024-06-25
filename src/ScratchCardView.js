@@ -35,49 +35,52 @@ export default function ScratchCardView() {
     onComplete: handleScratchComplete,
   };
 
-  return (<>
-    <Header/>
-    <div className="Apps">
-      {showConfetti && (
-        <Confetti width={width * 1} height={height * 0.8} />
-      )}
-      <div className="flex justify-center items-center h-screen">
-        <div
-          className="bg-white shadow-lg rounded-lg p-6 text-center relative"
-          style={{ width: "300px", height: "300px" }}
-        >
-          {!isScratched ? (
-            <div className="scratchCardContainers">
-              <ScratchCard {...settings}>
-                <div className="scratchedDiv text-lg font-bold text-gray-700">
+  return (
+    <>
+      <Header />
+      <div className="Apps">
+        {showConfetti && (
+          <Confetti width={width * 0.9} height={height * 0.8} />
+        )}
+        <div className="flex justify-center items-center h-screen">
+          <div
+            className="bg-white shadow-lg rounded-lg p-6 text-center relative"
+            style={{ width: "300px" }}
+          >
+            {!isScratched ? (
+              <div className="scratchCardContainers">
+                <div className="scratchCardWrapper">
+                  <ScratchCard {...settings}>
+                    <div className="scratchedDiv text-lg font-bold text-gray-700">
+                      {scratchedText}
+                    </div>
+                  </ScratchCard>
+                </div>
+              </div>
+            ) : (
+              <div className="scratchedDiv text-lg font-bold text-gray-700 bg-gray-100 boxStyle">
+                <div>
+                  <p className="text-3xl font-bold typewriter text-center gradient-text">
+                    Congratulations! You Won!
+                  </p>
+                </div>
+                <div className="text-center">
                   {scratchedText}
-                </div>
-              </ScratchCard>
-            </div>
-          ) : (
-            <div className="scratchedDiv text-lg font-bold text-gray-700 bg-gray-100 boxStyle">
-              <div>
-                <p className="text-3xl font-bold typewriter text-center">
-                  Congratulations! You Won!
-                </p>
-              </div>
-              <div className="text-center">
-                {scratchedText}
-                {couponNumber && (
+                  {couponNumber && (
+                    <div className="mt-2 text-center text-sm text-black">
+                      Coupon Code: {couponNumber}
+                    </div>
+                  )}
                   <div className="mt-2 text-center text-sm text-black">
-                    Coupon Code: {couponNumber}
+                    Thank you!
                   </div>
-                )}
-                <div className="mt-2 text-center text-sm text-black">
-                  Thank you!
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }

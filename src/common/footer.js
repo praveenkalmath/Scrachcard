@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="search-section">
       <div className="input-group">
           <input type="text" placeholder="E-mail" className="search-input" />
-          <input type="text" placeholder="Register Name" className="register-input" />
+          <input type="text" placeholder="Register " className="register-input" />
         </div>
       </div>
       <hr className="divider" />
