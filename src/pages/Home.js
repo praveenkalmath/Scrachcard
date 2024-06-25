@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
-import card from "./logo.jpg";
-import Header from "./common/header";
-import Footer from "./common/footer";
+import card from "../assests/images/logo.jpg";
+import Header from "../common/header";
+import Footer from "../common/footer";
 export default function Home() {
   const navigate = useNavigate();
 

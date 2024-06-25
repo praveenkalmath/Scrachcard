@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { SlGlobeAlt } from "react-icons/sl";
-import enteslog from "../enteslog.png";
+import enteslog from "../assests/images/enteslog.png";
 
 function Header() {
+  const [searchBoxVisible, setSearchBoxVisible] = useState(false);
+
+  const toggleSearchBox = () => {
+    setSearchBoxVisible(!searchBoxVisible);
+  };
+
   return (
-    <header>
+    <>
       <div className="top-header">
         <div className="top-left">
           <div className="languages">
@@ -28,7 +34,7 @@ function Header() {
           </div>
           <div className="contact">
             <div className="icons">
-              <CiMail />
+              <CiMail className="mailicon"/>
             </div>
             contact@entes.eu
           </div>
@@ -40,7 +46,7 @@ function Header() {
             <li>Technical Support</li>
             <li>Enermedic</li>
           </ul>
-          <a href="#" title="Search" className="search">
+          <a href="#" title="Search" className="search" onClick={toggleSearchBox}>
             <div className="searchheader">
               <CiSearch />
             </div>
@@ -48,96 +54,108 @@ function Header() {
           </a>
         </div>
       </div>
-      <div className="bottom-header">
-        <img src={enteslog} className="logo" alt="Logo" />
-        <div className="left-bottom">
-          <ul className="navbar-nav d-lg-flex align-items-center">
-            <li className="nav-item dropdown">
-              <a
-                href="https://www.entes.eu/products/"
-                className="nav-link dropdown-toggle headcolor"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                Products
-              </a>
-              <ul className="dropdown-menu">
-                <p> Power Quality and Energy </p>
-                <p> Electrical Measurement </p>
-                <p> Power Factor Correction</p>
-                <p>Energy Management Hardware and Software</p>
-                <p> Protection and Control </p>
-                <p> Current Transformers</p>
-              </ul>
-            </li>
+      <header>
+        <div className="bottom-header">
+          <img src={enteslog} className="logo" alt="Logo" />
+          <div className="left-bottom">
+            <ul className="navbar-nav d-lg-flex align-items-center">
+              <li className="nav-item dropdown">
+                <a
+                  href="https://www.entes.eu/products/"
+                  className="nav-link dropdown-toggle headcolor"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  Products
+                </a>
+                <ul className="dropdown-menu">
+                  <p>Power Quality and Energy</p>
+                  <p>Electrical Measurement</p>
+                  <p>Power Factor Correction</p>
+                  <p>Energy Management Hardware and Software</p>
+                  <p>Protection and Control</p>
+                  <p>Current Transformers</p>
+                </ul>
+              </li>
 
-            <li className="nav-item dropdown">
-              <a
-                href="https://www.entes.eu/solutions/"
-                className="nav-link dropdown-toggle headcolor"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                Solutions
-              </a>
+              <li className="nav-item dropdown">
+                <a
+                  href="https://www.entes.eu/solutions/"
+                  className="nav-link dropdown-toggle headcolor"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  Solutions
+                </a>
 
-              <ul className="dropdown-menu">
-                <p>Energy Management Solutions</p>
+                <ul className="dropdown-menu">
+                  <p>Energy Management Solutions</p>
 
-                <p>Power Factor Correction Solutions</p>
+                  <p>Power Factor Correction Solutions</p>
 
-                <p>Protection &amp; Control Solutions</p>
-              </ul>
-            </li>
+                  <p>Protection &amp; Control Solutions</p>
+                </ul>
+              </li>
 
-            <li className="nav-item dropdown">
-              <a
-                href="https://www.entes.eu/support-and-documents/"
-                className="nav-link dropdown-toggle headcolor"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                Support and Documents
-              </a>
+              <li className="nav-item dropdown">
+                <a
+                  href="https://www.entes.eu/support-and-documents/"
+                  className="nav-link dropdown-toggle headcolor"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  Support and Documents
+                </a>
 
-              <ul className="dropdown-menu">
-                <p>Videos</p>
+                <ul className="dropdown-menu">
+                  <p>Videos</p>
 
-                <p>Catalogue</p>
+                  <p>Catalogue</p>
 
-                <p>Brochures</p>
+                  <p>Brochures</p>
 
-                <p>User Manuals</p>
+                  <p>User Manuals</p>
 
-                <p>Setup Files</p>
+                  <p>Setup Files</p>
 
-                <p>Quality Certificates</p>
+                  <p>Quality Certificates</p>
 
-                <p>Test Reports</p>
+                  <p>Test Reports</p>
 
-                <p>FAQ</p>
-              </ul>
-            </li>
+                  <p>FAQ</p>
+                </ul>
+              </li>
 
-            <li className="nav-item">
-              <a href="https://www.entes.eu/blog/" className="nav-link headcolor">
-                Blog
-              </a>
-            </li>
+              <li className="nav-item">
+                <a href="https://www.entes.eu/blog/" className="nav-link headcolor">
+                  Blog
+                </a>
+              </li>
 
-            <li className="nav-item contact-button">
-              <a href="https://www.entes.eu/contact/" className="nav-link headcolor">
-                Contact
-              </a>
-            </li>
-          </ul>
+              <li className="nav-item contact-button">
+                <a href="https://www.entes.eu/contact/" className="nav-link headcolor">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="right-bottom"></div>
         </div>
-        <div className="right-bottom"></div>
-      </div>
-    </header>
+      </header>
+
+      {searchBoxVisible && (
+        <div className="search-box">
+          <div className="search-content">
+            <input type="text" placeholder="What are you looking for?" className="search-input-box" />
+            <button className="search-btn">Search</button>
+            <button className="close-btn" onClick={toggleSearchBox}>×</button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

@@ -132,11 +132,10 @@ html, body, #root {
   animation: typewriter 4s steps(25) 0.5s 1 normal both, blink 1s infinite step-end alternate;
 }
 .gradient-text {
-  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Adjust the gradient colors as needed */
+  background: linear-gradient(90deg, #f2870e, #ec1866); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 @keyframes typewriter {
@@ -160,6 +159,8 @@ html, body, #root {
   0%, 100% { border-color: transparent; }
   50% { border-color: black; }
 }
+
+
  /* Footer */
  
 .mainfooter {
@@ -216,7 +217,7 @@ html, body, #root {
   list-style-type: none;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-font-size: 15px;
+  font-size: 15px;
 }
 
 .footer-column li {
@@ -242,6 +243,7 @@ font-size: 15px;
 .grey-text {
   color: grey; 
 }
+
 .search-section {
   display: flex;
   justify-content: center;
@@ -252,7 +254,6 @@ font-size: 15px;
 
 .input-group {
   position: relative;
- 
 }
 
 .search-input, .register-input {
@@ -260,18 +261,23 @@ font-size: 15px;
   border-radius: 25px;
   border: 1px solid #ccc;
   outline: none;
-  width: 410px;
+}
+
+.search-input {
+  width: 380px; 
 }
 
 .register-input {
   position: absolute;
   right: 0;
-  width: 50px;
+  width: 100px;
   background-color: white;
-  color: black;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  
+  color: black; 
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .divider {
   border: none;
@@ -283,11 +289,11 @@ font-size: 15px;
   display: flex;
   justify-content: space-between;
   padding: 10px 150px;
-  color: black; /* Default text color for footer bottom */
+  color: black; 
 }
 
 .left-text {
-  color: black; /* Black text for left side */
+  color: black; 
 }
 
 .right-text {
@@ -296,8 +302,8 @@ font-size: 15px;
   font-size: 25px;
 }
 
-/* Header Styles */
 
+/* Header Styles */
 
 .top-header {
   display: flex;
@@ -322,6 +328,10 @@ font-size: 15px;
 .icons {
   margin-right: 10px;
   color: #fbd04b;
+}
+.mailicon{
+  padding-top: 6px;
+  color: #ffbf00;
 }
 
 .language {
@@ -366,11 +376,14 @@ font-size: 15px;
   padding: 5px 10px;
   
 }
-
+header{
+  top: 0;
+  position: sticky;
+}
 .bottom-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 50px;
+  padding: 15px 50px;
   padding-bottom: 20px;
   background-color: #fbd04b;
 }
@@ -422,6 +435,7 @@ font-size: 15px;
 .contact-button {
   background-color: #fff;
   border-radius: 250px 0px 250px 0px;
+  height: 30px;
 }
 
 .contact-button:hover {
@@ -439,4 +453,50 @@ justify-content: center;
 .headcolor{
   color: #646464;
   font-size: 20px;
+}
+.search-box {
+  position: fixed;
+  top: 12%;
+  left: 77.3%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  border: #f1f1f1;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.search-content {
+  display: flex;
+  align-items: center;
+  width: 387px;
+}
+
+.search-input-box {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px; 
+  margin: 0; 
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background-color: #fbd04b;
+  border: none;
+  border-radius: 0 4px 4px 0; 
+  cursor: pointer;
+  margin: 0; 
+}
+
+.close-btn {
+  padding: 0px 10px;
+  background-color: #646464;
+  color: white;
+  border: none;
+  font-size: 25px;
+  border-radius: 50%;
+  margin-left: 15px;
+  cursor: pointer;
 }

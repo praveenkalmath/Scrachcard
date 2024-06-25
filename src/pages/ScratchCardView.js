@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import ScratchCard from "react-scratchcard-v2";
 import Confetti from "react-confetti";
-import { useWindowSize } from 'react-use';
-import couponCover from "./logo.jpg";
-import "./styles.css";
-import Header from "./common/header";
-import Footer from "./common/footer";
+import { useWindowSize } from "react-use";
+import couponCover from "../assests/images/logo.jpg";
+import Header from "../common/header";
+import Footer from "../common/footer";
 
 export default function ScratchCardView() {
   const [scratchedText, setScratchedText] = useState("");
@@ -24,7 +23,7 @@ export default function ScratchCardView() {
     setScratchedText(`Discount ${discount}`);
     setIsScratched(true);
     setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 7000); 
+    setTimeout(() => setShowConfetti(false), 7000);
   };
 
   const settings = {
@@ -39,9 +38,7 @@ export default function ScratchCardView() {
     <>
       <Header />
       <div className="Apps">
-        {showConfetti && (
-          <Confetti width={width * 0.9} height={height * 0.8} />
-        )}
+        {showConfetti && <Confetti width={width * 0.9} height={height * 0.8} />}
         <div className="flex justify-center items-center h-screen">
           <div
             className="bg-white shadow-lg rounded-lg p-6 text-center relative"

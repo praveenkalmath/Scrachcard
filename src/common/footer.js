@@ -1,5 +1,5 @@
 import React from "react";
-import enteslog from "../enteslog.png";
+import enteslog from "../assests/images/enteslog.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -37,7 +37,7 @@ export default function Footer() {
               +90 (216) 314 1615
             </li>
             <li className="footertext">
-              <MdEmail className="iconcolor" />
+              <MdEmail className="iconcolor " />
               contact@entes.eu
             </li>
           </ul>
@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="search-section">
       <div className="input-group">
           <input type="text" placeholder="E-mail" className="search-input" />
-          <input type="text" placeholder="Register " className="register-input" />
+          <input type="text" placeholder="REGISTER " className="register-input black-text" />
         </div>
       </div>
       <hr className="divider" />

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import "./styles.css";
-import ScratchCardView from "./ScratchCardView";
+import Home from "../src/pages/Home";
+import "../src/assests/styles.css";
+import ScratchCardView from "./pages/ScratchCardView";
 export default function App() {
   return (
     <Router>
