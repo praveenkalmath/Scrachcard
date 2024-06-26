@@ -38,11 +38,15 @@ export default function ScratchCardView() {
     <>
       <Header />
       <div className="Apps">
-        {showConfetti && <Confetti width={width * 0.9} height={height * 1} />}
+        {showConfetti && (
+          <div className="confetti-container">
+            <Confetti width={width * 0.9} height={height * 1} />
+          </div>
+        )}
         <div className="flex justify-center items-center h-screen">
           <div
             className="bg-white shadow-lg rounded-lg p-6 text-center relative"
-            style={{ width: "300px" }}
+            style={{ width: "200px" }}
           >
             {!isScratched ? (
               <div className="scratchCardContainers">

@@ -512,3 +512,20 @@ header {
   text-decoration: none;
   padding: 10px;
 }
+header {
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+  background-color: rgba(241, 241, 241, 0.9); 
+}
+
+/* Ensure the confetti container has a higher z-index */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1100;
+  pointer-events: none;
+}
