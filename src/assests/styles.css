@@ -120,10 +120,10 @@ html, body, #root {
 .scratchCardWrapper {
   border: 4px solid gray;
   border-radius: 10px; 
-  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
 .typewriter {
   overflow: hidden;
   text-align: center;
@@ -376,45 +376,22 @@ html, body, #root {
   padding: 5px 10px;
   
 }
-header{
-  top: 0;
-  position: sticky;
-}
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 50px;
-  padding-bottom: 20px;
-  background-color: #fbd04b;
-}
-
-.left-bottom ul.navbar-nav {
-  display: flex;
-  list-style: none;
-  padding-left: 220px;
-}
-
-.left-bottom ul.navbar-nav li.nav-item {
-  position: relative;
-  margin-right: 20px;
-}
-
-.left-bottom ul.navbar-nav li.nav-item a.nav-link {
-  text-decoration: none;
-  padding: 10px;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
-  width: 320px;
+  width: 300px;
   top: 100%;
   left: 0;
   background-color: #fff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
-
+.solution{
+  width: 250px;
+}
+.support{
+  width: 150px;
+}
 .dropdown-menu li {
   padding: 10px 20px;
 }
@@ -453,6 +430,9 @@ justify-content: center;
 .headcolor{
   color: #646464;
   font-size: 20px;
+}
+.headcolor:hover{
+  color: white;
 }
 .search-box {
   position: fixed;
@@ -499,4 +479,36 @@ justify-content: center;
   border-radius: 50%;
   margin-left: 15px;
   cursor: pointer;
+}
+header {
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+  background-color: rgba(241, 241, 241, 0.9); 
+}
+
+
+
+/* Bottom header styles */
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background-color: #fbd04b;
+}
+
+.left-bottom ul.navbar-nav {
+  display: flex;
+  list-style: none;
+  padding-left: 280px; 
+}
+
+.left-bottom ul.navbar-nav li.nav-item {
+  position: relative;
+  margin-right: 20px;
+}
+
+.left-bottom ul.navbar-nav li.nav-item a.nav-link {
+  text-decoration: none;
+  padding: 10px;
 }

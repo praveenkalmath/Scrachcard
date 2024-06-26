@@ -38,7 +38,7 @@ export default function ScratchCardView() {
     <>
       <Header />
       <div className="Apps">
-        {showConfetti && <Confetti width={width * 0.9} height={height * 0.8} />}
+        {showConfetti && <Confetti width={width * 0.9} height={height * 1} />}
         <div className="flex justify-center items-center h-screen">
           <div
             className="bg-white shadow-lg rounded-lg p-6 text-center relative"

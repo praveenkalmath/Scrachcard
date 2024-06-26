@@ -90,7 +90,7 @@ function Header() {
                   Solutions
                 </a>
 
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu solution">
                   <p>Energy Management Solutions</p>
 
                   <p>Power Factor Correction Solutions</p>
@@ -110,7 +110,7 @@ function Header() {
                   Support and Documents
                 </a>
 
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu support">
                   <p>Videos</p>
 
                   <p>Catalogue</p>

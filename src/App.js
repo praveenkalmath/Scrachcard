@@ -7,8 +7,8 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/scratch-card" element={<ScratchCardView />} />
         <Route path="/" element={<Home />} />
+        <Route path="/scratch-card" element={<ScratchCardView />} />
       </Routes>
     </Router>
   );
